@@ -1,10 +1,14 @@
 <?php
 
 # Ref: https://phpunit.de/
-# require_once ('PHPUnit/Framework/TestCase.php');
+require_once ('PHPUnit/Framework/TestCase.php');
+
 #
 # PHPUnit 3.5 Autoloader
-require_once 'PHPUnit/Autoload.php';
+#  @requires PHPUnit >=3.5
+function testRequiringNewerPHPUnit() {
+  require_once 'PHPUnit/Autoload.php';
+}
 
 class HelloWorldTest extends PHPUnit_Framework_TestCase
 {
