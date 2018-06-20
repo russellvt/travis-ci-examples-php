@@ -1,7 +1,7 @@
 <?php
 
 # Ref: https://phpunit.de/
-require_once ('PHPUnit/Framework/TestCase.php');
+#require_once ('PHPUnit/Framework/TestCase.php');
 
 #
 # PHPUnit 3.5 Autoloader
@@ -19,6 +19,7 @@ class HelloWorldTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
+	print "PHPUnit Version: " . PHPUnit_Runner_Version::id() . "\n";
         $this->pdo = new PDO($GLOBALS['db_dsn'], $GLOBALS['db_username'], $GLOBALS['db_password']);
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo->query("CREATE TABLE hello (what VARCHAR(50) NOT NULL)");
